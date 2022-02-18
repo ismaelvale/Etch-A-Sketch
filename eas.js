@@ -2,8 +2,12 @@ const body = document.body;
 const container = document.querySelector('div');
 const div = document.createElement('div');
 
-for (let i = 0; i < 256; i++){
-    container.innerHTML += '<div id="square"></div>';
+window.onload = createGrid (256);
+
+function createGrid (n) {
+    for (let i = 0; i < n; i++){
+        container.innerHTML += '<div id="square"></div>';
+    }
 }
 
 document.addEventListener("mouseover", function(e) {
@@ -11,3 +15,11 @@ document.addEventListener("mouseover", function(e) {
         e.target.style.backgroundColor= 'black';
     }
 });
+
+const refresh = document.querySelector('button');
+
+refresh.addEventListener('click', function() {
+    const grid = prompt('Choose grid size: (Max:100)');
+    console.log(grid);
+    createGrid(grid);
+}); 
