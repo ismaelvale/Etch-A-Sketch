@@ -2,8 +2,10 @@ const body = document.body;
 const container = document.querySelector('div');
 const div = document.createElement('div');
 
-window.onload = function createGrid () {
-    for (let i = 0; i < 256; i++){
+window.onload = createGrid(256);
+
+function createGrid (n) {
+    for (let i = 0; i < n; i++){
         container.innerHTML += '<div id="square"></div>';
     }
 }
@@ -19,6 +21,8 @@ const refresh = document.querySelector('button');
 
 refresh.addEventListener('click', function() {
     const grid = prompt('Choose grid size: (Max:100)');
+    const newGrid = grid*grid;
+    createGrid(newGrid);
     console.log(grid);
-
+    console.log(newGrid);
 }); 
