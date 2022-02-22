@@ -1,13 +1,33 @@
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
 #container {
-    display:grid;
-    grid-template-columns: repeat(16, 20px [col-start]);
-    grid-template-rows: repeat(16, 20px [col-start]);
-    place-content: center;
-    grid: auto-flow;
+    display: grid;
+    grid-auto-flow: row;
+    height: 500px;
+    width: 500px;
+    border: 10px solid red;
+    margin: auto;
   }
-  #square {
-    display:grid;
-    grid-template-columns: repeat(16, 20px [col-start]);
-    grid-template-rows: repeat(16, 20px [col-start]);
-    border: 1px solid black;
+  
+  .row {
+    display: grid;
+    grid-auto-flow: column;
+  }
+  .cell {
+    display: grid;
+    grid-auto-columns: 1fr;
+  }
+
+  #buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+    border: 10px solid black;
   }
