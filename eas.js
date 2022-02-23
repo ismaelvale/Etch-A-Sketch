@@ -37,5 +37,3 @@ function clearGrid() {
       container.removeChild(element);
     });
   }
-
-  const colorful = document.querySelector('#colorful');
